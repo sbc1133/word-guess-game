@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <h1>Hangman</h1>
+    <div>
+        <h2 id="startMsg">
+
+        </h2>
+    </div>
+    <div id="main">
+
+    </div>
+
+    <br>
+    <div class="result">
+        <h1 id="result_str"></h1>
+    </div>
+    <div>
+        <h2 id="msg"></h2>
+    </div>
+    <div id="stats">
+        <div class="hangman_cell">
+            <h3>Number of times letter appeared:&nbsp;<span id="frequency"></span></h3>
+        </div>
+
+        <div>
+            <h3>letters already guessed :&nbsp;<span id="guess"></span></h3>
+        </div>
+        <div class="hangman_cell">
+            <h3>Remaining guess :&nbsp;<span id="bal_guess"></span></h3>
+        </div>
+        <div class="hangman_cell">
+            <h3> Remaining letters: :&nbsp;<span id="bal_letter"></span></h3>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+
+</html>
