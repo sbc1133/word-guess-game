@@ -52,7 +52,6 @@ function findKeyInWord(input_key, w) {
     var indices = [];
     var selector_array = [];
 
-
     for (let i = 0; i < w.length; i++) {
 
         if (w[i] === input_key) {
@@ -96,11 +95,12 @@ function startGame(word_random_array) {
     document.onkeyup = function (event) {
         var input = event.key;
         keys_guessed_str.push(input);
-        chances4guess--;
+        
         var keyFound = findKeyInWord(input, word);
         if (keyFound > 0) {
             document.getElementById("msg").textContent = success_str;
         } else {
+            chances4guess--;
             document.getElementById("msg").textContent = failure_str;
         }
         remaining_letters = remaining_letters - keyFound;
@@ -109,15 +109,13 @@ function startGame(word_random_array) {
         document.getElementById("guess").textContent = keys_guessed_str.toString();
         document.getElementById("bal_guess").textContent = chances4guess;
         document.getElementById("bal_letter").textContent=remaining_letters;
-        if (chances4guess === 0) {
-            if (remaining_letters > 0) {
-                document.getElementById("result_str").textContent = "You lost :(";
-                
+
+            if (remaining_letters === 0) {
+                document.getElementById("result_str").textContent = "You Win";   
             }
-            else{
-                document.getElementById("result_str").textContent = "You Win !!!!";
+            else if (chances4guess===0){
+                document.getElementById("result_str").textContent = "You loose!!!!";
             }
-        }
 
     }
 }
