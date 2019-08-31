@@ -103,9 +103,10 @@ function startGame(word_random_array) {
             chances4guess--;
             document.getElementById("msg").textContent = failure_str;
         }
-        remaining_letters = remaining_letters - keyFound;
+        
         console.log("remaining letters: " + remaining_letters)
         updateDomWithKeyOccurence(keyFound)
+        remaining_letters = remaining_letters - keyFound;
         document.getElementById("guess").textContent = keys_guessed_str.toString();
         document.getElementById("bal_guess").textContent = chances4guess;
         document.getElementById("bal_letter").textContent=remaining_letters;
